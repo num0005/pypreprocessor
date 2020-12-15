@@ -2,8 +2,8 @@
 # pypreprocessor.py
 
 __author__ = 'Evan Plaice'
-__coauthor__ = 'Hendi O L, Epikem'
-__version__ = '0.7.7'
+__coauthor__ = 'Hendi O L, Epikem, num0005, tcumby'
+__version__ = '0.7.8'
 
 import sys
 import os
@@ -246,7 +246,7 @@ class preprocessor:
             index += 1
 
     # parsing/processing
-    def parse(self):
+    def __parse(self):
         self.__reset_internal()
         self.check_deprecation()
         # open the input file
@@ -289,7 +289,14 @@ class preprocessor:
                         else:
                             cond = ' if '
                         print('Block:', item, ' is in condition: ', cond)
+
+    def parse(self):
+        self.__parse()
         self.post_process()
+
+    def parse_to_string(self):
+        self.__parse()
+        return self.__outputBuffer
 
     # post-processor
     def post_process(self):
