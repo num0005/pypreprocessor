@@ -14,7 +14,7 @@
 ##Using pip
 
 1. in a terminal enter:
-    sudo pip install pypreprocessor
+    sudo pip install git+https://github.com/num0005/pypreprocessor.git
 
 *Note: sudo is only necessary if the location of the python
  libraries requires root priveledges to access.*
