@@ -3,7 +3,7 @@
 
 __author__ = 'Evan Plaice'
 __coauthor__ = 'Hendi O L, Epikem, num0005, tcumby'
-__version__ = '0.7.8'
+__version__ = '0.7.9'
 
 import sys
 import os
@@ -25,8 +25,8 @@ class preprocessor:
         self.run = run
         self.resume = resume
         self.save = save
-        self.readEncoding = sys.stdin.encoding
-        self.writeEncoding = sys.stdout.encoding
+        self.readEncoding = sys.stdin.encoding if sys.stdin else None
+        self.writeEncoding = sys.stdout.encoding if sys.stdin else None
         # private variables
         self.__linenum = 0
         self.__excludeblock = False
